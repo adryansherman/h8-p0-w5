@@ -1,10 +1,15 @@
 function kaliTerusRekursif(angka) {
     var strAngka = String(angka)
-    if(strAngka.length === 0){
-        return 0
+    if(strAngka.length === 1){
+        return angka
     }else{
-        //var next = 
-        return Number(strAngka[0]) //* kaliTerusRekursif
+        var kali = 1;
+        for (i=0; i<strAngka.length; i++){
+            if(strAngka.length > 1){
+               kali = kali * Number(strAngka[i])
+            }
+        }
+        return kaliTerusRekursif(kali)
     }
   }
   
@@ -14,3 +19,4 @@ function kaliTerusRekursif(angka) {
   console.log(kaliTerusRekursif(24)); // 8
   console.log(kaliTerusRekursif(654)); // 0
   console.log(kaliTerusRekursif(1231)); // 6
+

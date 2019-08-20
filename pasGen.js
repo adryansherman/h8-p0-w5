@@ -4,14 +4,12 @@ function changeVocals (str) {
   var tampung = ''
   for(var i=0; i<str.length; i++){
       for(var j=0; j<vowel.length; j++){
-          if(str[i]===vowel[j]){
+          if(str[i] === vowel[j]){
+            tampung = ''
               tampung += change[j]
-              tampung = ''
-          }
-          if(str[i]!== vowel[j]){
+          }else{
             tampung += str[i]
-
-          }
+          }  
           }
       }
   return tampung
