@@ -44,14 +44,10 @@
             tanpaSpasi += str[i]
         }
     }
-    return tanpaSpasi
-   
-  
-   
+    return tanpaSpasi 
   }
   
   function passwordGenerator (str) {
-
     if(str.length < 5){
         return 'Minimal karakter yang diinputkan adalah 5'
     }
