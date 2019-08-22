@@ -1,19 +1,21 @@
-function changeVocals (str) {
-  var vowel = 'aiueoAIUEO'
-  var change = 'bjvfBJVF'
-  var tampung = ''
-  for(var i=0; i<str.length; i++){
-      for(var j=0; j<vowel.length; j++){
-          if(str[i] === vowel[j]){
-            tampung = ''
-              tampung += change[j]
-          }else{
-            tampung += str[i]
-          }  
-          }
+  function changeVocals(str){
+    var vowel = 'aiueoAIUEO'
+    var ganti = 'bjvfpBJVFP'
+    tampung = ''
+    for(var i=0; i<str.length;i++){
+      for(var j=0; j<vowel.length;j++){
+        if(str[i] === vowel[j]){
+          tampung +=  ganti[j]
+          break
+        }
       }
-  return tampung
-}
+      if(str[i] !== vowel [j]){
+        tampung+=str[i]
+      }  
+    }
+    return tampung
+  }
+ 
   
   function reverseWord (str) {
     var balik = ''
@@ -44,24 +46,30 @@ function changeVocals (str) {
     }
     return tanpaSpasi
    
+  
+   
   }
   
-  function passwordGenerator (name) {
-    
-    if(name.length < 5){
+  function passwordGenerator (str) {
+
+    if(str.length < 5){
         return 'Minimal karakter yang diinputkan adalah 5'
     }
-    var name = changeVocals(name)
-    var name = reverseWord(name)
-    var name = setLowerUpperCase(name)
-    var name = removeSpaces(name)
-
-    return name
+    var vokal = changeVocals(str)
+    var balik = reverseWord(vokal)
+    var gedeKecil = setLowerUpperCase(balik)
+    var spasi = removeSpaces(gedeKecil)
+    return spasi
   }
-  
   console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
   console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
   console.log(passwordGenerator('Alexei')); // 'JFXFLb'
   console.log(passwordGenerator('Alex')); // 'Minimal karakter yang diinputkan adalah 5 karakter'
+  
+  
+
+
+
+
 
  
